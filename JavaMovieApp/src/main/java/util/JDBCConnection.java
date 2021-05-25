@@ -24,8 +24,8 @@ public class JDBCConnection {
 //            String password = "password";
 
             try {
-//                FileInputStream input = new FileInputStream("src/main/resources/connection.properties");
-                FileInputStream input = new FileInputStream(JDBCConnection.class.getClassLoader().getResource("connection.properties").getFile());
+                FileInputStream input = new FileInputStream("src/main/resources/connection.properties");
+//                 FileInputStream input = new FileInputStream(JDBCConnection.class.getClassLoader().getResource("connection.properties").getFile());
 
                 Properties props = new Properties();
                 props.load(input);

@@ -21,6 +21,9 @@ public class JDBCConnection {
                 String url = System.getenv("db_url");
                 String username = System.getenv("db_user");
                 String password = System.getenv("db_pass");
+                System.out.println(url);
+                System.out.println(user);
+                System.out.println(pass);
 
                 conn = DriverManager.getConnection(url, username, password);
             } catch (Exception e) {

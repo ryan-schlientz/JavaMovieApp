@@ -20,8 +20,8 @@ public class JDBCConnection {
                 String username = System.getenv("db_user");
                 String password = System.getenv("db_pass");
                 System.out.println(url);
-                System.out.println(user);
-                System.out.println(pass);
+                System.out.println(username);
+                System.out.println(password);
 
                 conn = DriverManager.getConnection(url, username, password);
             } catch (Exception e) {

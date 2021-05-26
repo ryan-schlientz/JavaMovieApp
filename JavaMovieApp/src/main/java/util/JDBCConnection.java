@@ -17,22 +17,10 @@ public class JDBCConnection {
          */
 
         if (conn == null) {
-//            String endpoint = "ryan2104postgres.cpbskq7nq5ve.us-east-1.rds.amazonaws.com";
-//            //URL Format: jdbc:postgresql://[host]/[database]
-//            String url = "jdbc:postgresql://" + endpoint + "/postgres";
-//            String username = "ryan";
-//            String password = "password";
-
             try {
-                FileInputStream input = new FileInputStream("src/main/resources/connection.properties");
-//                 FileInputStream input = new FileInputStream(JDBCConnection.class.getClassLoader().getResource("connection.properties").getFile());
-
-                Properties props = new Properties();
-                props.load(input);
-
-                String url = props.getProperty("url");
-                String username = props.getProperty("username");
-                String password = props.getProperty("password");
+                String url = System.getenv("db_url");
+                String username = System.getenv("db_user");
+                String password = System.getenv("db_pass");
 
                 conn = DriverManager.getConnection(url, username, password);
             } catch (Exception e) {
